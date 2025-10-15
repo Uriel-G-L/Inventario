@@ -1,2 +1,2 @@
 # SCI_ingenier-a
-Sistema de control de inventario "SCI" :Proyecto de ing2
+Sistema de control de inventario "SCI" :Proyecto de ing2 Sandersssss
