@@ -1,0 +1,34 @@
+<!-- create.component.html -->
+<h2>Nuevo usuario</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="grid">
+  <label>Nombre
+    <input class="input" formControlName="nombre" />
+    <small class="error" *ngIf="form.get('nombre')?.touched && form.get('nombre')?.hasError('required')">Requerido.</small>
+    <small class="error" *ngIf="form.get('nombre')?.hasError('minlength')">Mínimo 3 caracteres.</small>
+  </label>
+
+  <label>Correo
+    <input type="email" class="input" formControlName="correo" />
+    <small class="error" *ngIf="form.get('correo')?.touched && form.get('correo')?.hasError('required')">Requerido.</small>
+    <small class="error" *ngIf="form.get('correo')?.hasError('email')">Correo inválido.</small>
+  </label>
+
+  <label>Rol
+    <select class="input" formControlName="rol">
+      <option value="OPERADOR">Operador de Almacén</option>
+      <option value="SUPERADMIN">Super Administrador</option>
+    </select>
+  </label>
+
+  <label>Contraseña
+    <input type="password" class="input" formControlName="password" />
+    <small class="error" *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')">Requerida.</small>
+    <small class="error" *ngIf="form.get('password')?.hasError('minlength')">Mínimo 6 caracteres.</small>
+  </label>
+
+  <button class="btn" type="submit" [disabled]="form.invalid || submitting">
+    {{ submitting ? 'Guardando...' : 'Crear usuario' }}
+  </button>
+</form>
+

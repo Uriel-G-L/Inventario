@@ -1,0 +1,43 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "sku": "ABC-001",
+      "nombre": "Cinta",
+      "descripcion": "Cinta adhesiva",
+      "costo": 12.5,
+      "stockMin": 5
+    },
+    {
+      "id": "2",
+      "sku": "ABC-002",
+      "nombre": "Caja",
+      "descripcion": "Caja cartón",
+      "costo": 8.9,
+      "stockMin": 10
+    }
+  ],
+  "users": [
+    {
+      "nombre": "Admin",
+      "correo": "uriel.admin@sci.com",
+      "rol": "SUPERADMIN",
+      "password": "1230",
+      "id": "u1"
+    },
+    {
+      "nombre": "Operador",
+      "correo": "ivan.op@sci.com",
+      "rol": "OPERADOR",
+      "password": "1230",
+      "id": "u2"
+    },
+    {
+      "id": "c503",
+      "nombre": "Panquecito de fresa ",
+      "correo": "Panfresa@gmail.com",
+      "rol": "OPERADOR",
+      "password": "040203"
+    }
+  ]
+}

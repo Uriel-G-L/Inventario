@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="grid">
+  <label>SKU
+    <input class="input" formControlName="sku" placeholder="ABC-001" />
+    <small class="error" *ngIf="form.get('sku')?.hasError('required') && form.get('sku')?.touched">SKU es obligatorio.</small>
+    <small class="error" *ngIf="form.get('sku')?.hasError('skuTaken')">El SKU ya existe.</small>
+  </label>
+
+  <label>Nombre
+    <input class="input" formControlName="nombre" placeholder="Producto X" />
+    <small class="error" *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">Nombre obligatorio.</small>
+  </label>
+
+  <label>Descripción
+    <textarea class="input" rows="3" formControlName="descripcion"></textarea>
+  </label>
+
+  <label>Costo
+    <input type="number" step="0.01" class="input" formControlName="costo" />
+    <small class="error" *ngIf="form.get('costo')?.hasError('min') && form.get('costo')?.touched">Debe ser ≥ 0.</small>
+  </label>
+
+  <button class="btn" type="submit">{{ editing ? 'Guardar cambios' : 'Crear producto' }}</button>
+</form>

@@ -1,0 +1,22 @@
+<div class="flex-between">
+  <h2>Productos</h2>
+  <a class="btn" routerLink="/productos/nuevo">Nuevo</a>
+</div>
+
+<table class="table">
+  <thead>
+    <tr><th>SKU</th><th>Nombre</th><th>Costo</th><th style="width:140px">Acciones</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products$ | async">
+      <td>{{p.sku}}</td>
+      <td>{{p.nombre}}</td>
+      <td>{{p.costo | currency}}</td>
+      <td>
+        <a [routerLink]="['/productos', p.id, 'editar']">Editar</a>
+        &nbsp;|&nbsp;
+        <button class="btn" (click)="remove(p)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

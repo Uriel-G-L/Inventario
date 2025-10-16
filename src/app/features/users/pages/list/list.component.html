@@ -1,0 +1,20 @@
+<div class="flex-between">
+  <h2>Usuarios</h2>
+  <a class="btn" routerLink="/usuarios/nuevo">Nuevo</a>
+</div>
+
+<table class="table">
+  <thead><tr><th>Nombre</th><th>Correo</th><th>Rol</th><th style="width:140px">Acciones</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let u of (users$ | async)">
+      <td>{{u.nombre}}</td>
+      <td>{{u.correo}}</td>
+      <td>{{u.rol}}</td>
+      <td>
+        <a [routerLink]="['/usuarios', u.id, 'editar']">Editar</a>
+        &nbsp;|&nbsp;
+        <button class="btn" (click)="remove(u)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
